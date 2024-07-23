@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EJ Arts and Print</title>
+        <link rel="icon" href="image/EJLOGO.png" type="image/png">
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <!-- Custom CSS File Link  -->
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+
+    <body>
+
+        <!-- HEADER -->
+        <header class="header">
+            <div id="menu-btn" class="fas fa-bars"></div>
+
+            <div class="logo-container">
+                <a href = "#home"><img src="image/EJLOGO.png" alt="PUP Logo" class="pup-logo"></a>
+                <a href="#" class="logo">Arts & Print<i class="fas fa-tshirt"></i></a>
+            </div>
+
+            <nav class="navbar">
+                <a href="#home">home</a>
+                
+                <a href="#menu">menu</a>
+                <a href="#Sale">Sale</a>
+                <a href="#about">About us</a>
+                <a href="#trend">Blogs</a>
+                <a href="signin.html">Sign In</a>
+                <a href = "#footer">Contact us</a>
+                <a href = "payment.html">Payment Form</a>
+            </nav>
+             <!-- ADD TO CART -->
+            <div class = "conts">
+                <div class="shopping">
+                    <img class = "icon" src="image/icon.png" alt="Error">
+                    <span class="quantity">0</span>
+                </div>
+                <div class="list">
+    
+                </div>
+                <div class="card">
+                    <h1>Cart</h1>
+                    <ul class="listCard"></ul>
+                    <div class="checkOut">
+                        <a href="payment.html" id="checkoutLink">
+                            <div class="total" id="totalAmount">0</div>
+                            <i class="fas fa-arrow-right"></i> Payment Form
+                        </a>
+                        <div class="closeShopping">Close</div>
+                    </div>
+                </div>
+                
+                <script>
+                    document.getElementById('checkoutLink').addEventListener('click', function(event) {
+                        const totalAmount = parseFloat(document.getElementById('totalAmount').textContent);
+                        
+                        if (totalAmount === 0) {
+                            event.preventDefault();  // Prevent the link from navigating
+                            alert('No items in the cart!');
+                        } else {
+                            // Check if user is logged in
+                            const isLoggedIn = false; // Replace with actual login check logic
+                            
+                            if (!isLoggedIn) {
+                                event.preventDefault();  // Prevent the link from navigating
+                                alert('You need to register or log in first!');
+                                // Redirect to login or registration page
+                                window.location.href = 'signin.html'; // Replace with your login or registration page URL
+                            }
+                        }
+                    });
+                </script>
+                        
+                    </div>
+                </div>
+            </div>
+           
+        </header>
+
+        <!-- HOME -->
+        <section class="home" id="home">
+            <div class="row">
+                <div class="content">
+                    <h3>Elevate your everyday look!</h3>
+                    <a href="#" class="btn">Get yours now</a>
+                </div>
+
+                <div class="image">
+                    <img src="image/abmeSHIRTRED.png" class="main-home-image" alt="">
+                </div>
+            </div>
+
+            <div class="image-slider">
+                <img src="image/foundingshirtWHITE.png" alt="">
+                <img src="image/abmeSHIRTBLACK.png" alt="">
+                <img src="image/abmeSHIRTGRAY.png" alt="">
+                <img src="image/foundingshirtBlack.png" alt="">
+            </div>
+        </section>
+
+        <!-- MENU -->
+        <section class="menu" id="menu">
+            <h1 class="heading">Clothes Menu</h1>
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="image/blackshirt.png" alt="">
+                    <div class="content">
+                        <h3>Plain Black T-Shirt</h3>
+                        <p>Made 100% soft cotton and available in all sizes.</p>
+                        <span>₱295.00</span>
+                        <button class="add-to-cart" onclick="addToCard(0)">Add to Cart</button>
+                    </div>
+                </div>
+
+                <a  class="box">
+                    <img src="image/blueshirt.png" alt="">
+                    <div class="content">
+                        <h3>Plane blue T-Shirt</h3>
+                        <p>Made 100% soft cotton and available in all sizes</p>
+                        <span>₱295.00</span>
+                        
+                        <button class="add-to-cart" onclick="addToCard(1)">Add to Cart</button>
+                    </div>
+                </a>
+
+                <a  class="box">
+                    <img src="image/redshirt.png" alt="">
+                    <div class="content">
+                        <h3>Plane Red T-Shirt</h3>
+                        <p>Made 100% soft cotton and available in all sizes</p>
+                        <span>₱295.00</span>
+                        <button class="add-to-cart" onclick="addToCard(2)">Add to Cart</button>
+                    </div>
+                </a>
+                <a  class="box">
+                    <img src="image/whiteshirt.png" alt="">
+                    <div class="content">
+                        <h3>Plane White T-Shirt</h3>
+                        <p>Made 100% soft cotton and available in all sizes</p>
+                        <span>₱300.00</span>
+                        <button class="add-to-cart" onclick="addToCard(3)">Add to Cart</button>
+                    </div>
+                </a>
+                <a  class="box">
+                    <img src="image/shirt2.png" alt="">
+                    <div class="content">
+                        <h3>PUP T-Shirt White</h3>
+                        <p>Show your PUP spirit by wearing this PUP 19th founding anniversary shirt!</p>
+                        <span>₱300.00</span>
+                        <button class="add-to-cart" onclick="addToCard(4)">Add to Cart</button>
+                    </div>
+                </a>
+
+                <a  class="box">
+                    <img src="image/foundingshirtBlack.png" alt="">
+                    <div class="content">
+                        <h3>19th Founding Anniversary Shirt Black</h3>
+                        <p>Show your PUP spirit by wearing this PUP 19th founding anniversary shirt!</p>
+                        <span>₱300.00</span>
+                        <button class="add-to-cart" onclick="addToCard(5)">Add to Cart</button>
+                    </div>
+                </a>
+
+                <a  class="box">
+                    <img src="image/shirt6.png" alt="">
+                    <div class="content">
+                        <h3>Pup Hoodie Blue</h3>
+                        <p>Show your PUP spirit by wearing this official hoodie merchandise!</p>
+                        <span>₱600.00</span>
+                        <button class="add-to-cart" onclick="addToCard(6)">Add to Cart</button>
+                    </div>
+
+                </a>
+
+                <a  class="box">
+                    <img src="image/abmeSHIRTBLACK.png" alt="">
+                    <div class="content">
+                        <h3>ABME Shirt Black</h3>
+                        <p>Comfortable gray ABME shirt, perfect for casual wear. Features the UP logo.</p>
+                        <span>₱350.00</span>
+                        <button class="add-to-cart" onclick="addToCard(7)">Add to Cart</button>
+                    </div>
+                </a>
+
+                <a  class="box">
+                    <img src="image/abmeSHIRTGRAY.png" alt="">
+                    <div class="content">
+                        <h3>ABME Shirt Gray</h3>
+                        <p>Comfortable gray ABME shirt, perfect for casual wear. Features the UP logo.</p>
+                        <span>₱350.00</span>
+                        <button class="add-to-cart" onclick="addToCard(8)">Add to Cart</button>
+                    </div>
+                </a>
+
+                <a  class="box">
+                    <img src="image/abmeSHIRTRED.png" alt="">
+                    <div class="content">
+                        <h3>ABME Shirt Red</h3>
+                        <p>Comfortable gray ABME shirt, perfect for casual wear. Features the UP logo.</p>
+                        <span>₱350.00</span>
+                        <button class="add-to-cart" onclick="addToCard(9)">Add to Cart</button>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- On sale -->
+        <section class="Sale" id="Sale">
+            <h1 class="heading"><span>On Sale!</span></h1>
+
+            <div class="swiper review-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide box">
+                        <i class="fas fa-quote-left"></i>
+                        <i class="fas fa-quote-right"></i>
+                        <img src="image/shirt5.png" alt="">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Pup Pink Jacket</p>
+                        <h3>20% off - Don’t Miss Out!</h3>
+                        <button class="buynow-btn" onclick="redirectToPayment()">Buy Now</button>
+
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <i class="fas fa-quote-left"></i>
+                        <i class="fas fa-quote-right"></i>
+                        <img src="image/shirt3.png" alt="">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Pup Black T-Shirt</p>
+                        <h3>20% off - Don’t Miss Out!</h3>
+                        <button class="buynow-btn" onclick="redirectToPayment()">Buy Now</button>
+                        <script>
+                            function redirectToPayment() {
+                                window.location.href = 'payment.html';
+                            }
+                        </script>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <i class="fas fa-quote-left"></i>
+                        <i class="fas fa-quote-right"></i>
+                        <img src="image/shirt.png" alt="">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Pup Red t-shirt, pure cotton</p>
+                        <h3>30% off - Don’t Miss Out!</h3>
+                        <button class="buynow-btn" onclick="redirectToPayment()">Buy Now</button>
+                        <script>
+                            function redirectToPayment() {
+                                window.location.href = 'payment.html';
+                            }
+                        </script>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <i class="fas fa-quote-left"></i>
+                        <i class="fas fa-quote-right"></i>
+                        <img src="image/foundingshirtWHITE.png" alt="">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>19th founding anniversary white t-shirt</p>
+                        <h3>40% off - Don’t Miss Out!</h3>
+                        <button class="buynow-btn" onclick="redirectToPayment()">Buy Now</button>
+                        <script>
+                            function redirectToPayment() {
+                                window.location.href = 'payment.html';
+                            }
+                        </script>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="about" id="about">
+            <h1 class="heading">About us</h1>
+
+            <div class="row">
+                <div class="content">
+                    <h3 class="title">EJ Arts and Prints: Your Creative Partner in Custom Printing</h3>
+                    <p>Welcome to EJ Arts and Prints, where your vision is our mission. Established in 2004 by Francisco "Boy" Laganas, we have proudly served the Bulacan community and beyond for two decades. Located at 3344 Milagrosa St., Km. 39 Pulong Buhangin Sta. Maria, Bulacan,
+                         our family-owned business has grown from humble beginnings into a trusted name in the printing industry.</p>
+                    <h3 class="title">Our Story</h3>
+                    <p>EJ Arts and Prints began as a small venture fueled by a passion for creativity and a commitment to quality. Francisco "Boy" Laganas, our founder and a skilled sign artist, set out to provide top-notch printing services that cater to a variety of needs. Over the years,
+                         our dedication to excellence and customer satisfaction has enabled us to expand our services and build a loyal customer base.</p>
+                     <h3 class="title">What We Do</h3>
+                      <p>At EJ Arts and Prints, we offer a wide range of printing solutions to meet your needs. Our services include:</p>
+                      <h1>Panoflex Printing</h1>
+                      <h1>Wall Signs</h1>
+                      <h1>Stickers</h1>
+                      <h1>T-Shirt Printing</h1>
+                      <p>Whether you need promotional materials for your business, custom apparel for an event, or unique gifts for loved ones, 
+                        we have the expertise and technology to bring your ideas to life.</p>
+                      <h3 class="title">Our Commitment</h3>
+                      <p>Quality and customer satisfaction are at the core of everything we do. We use state-of-the-art printing equipment and premium materials to ensure that every product meets our high standards. Our skilled team pays meticulous attention to detail, ensuring that your designs are reproduced with vibrant colors and sharp clarity.
+                      </p>  
+                      <h3 class="title">Why Choose EJ Arts and Prints?</h3>
+                      <p>Experience and Expertise: With 20 years of experience, we have the knowledge and skills to handle projects of any size and complexity.
+                        Customer-Centric Approach: We prioritize our customers and strive to deliver exceptional service from start to finish.
+                        Innovative Solutions: We stay ahead of industry trends and continually invest in the latest technologies to provide cutting-edge printing solutions.
+                        Competitive Pricing: We offer high-quality services at competitive prices, ensuring you get the best value for your investment.
+                      </p>   
+                    <div class="icons-container">
+                        <div class="icons">
+                            <img src="image/clothes.png" alt="">
+                            <h3>quality clothes</h3>
+                            <h2>With 100% cotton</h2>
+                        </div>
+                        <div class="icons">
+                            <a href = "https://www.facebook.com/profile.php?id=61559014738619&sk=photos" target="_blank"><img src="image/facebook.png" alt=""></a>
+                            <h3>Facebook page.</h3>
+                        </div>
+                        <div class="icons">
+                            <img src="image/truck.png" alt="">
+                            <h3>with free delivery</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trend -->
+        <section class="trend" id="trend">
+            <h1 class="heading">Latest Trends in Art and Design<span>Explore Now</span></h1>
+            <div class="swiper review-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide box">
+                        <img src="image/foundingshirtBlack.png" alt="">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>PUP founding T-SHIRT black</p>
+                        <h3>40% off - Don’t Miss Out!</h3>
+                        <button class = "buynow-btn">Buy Now</button>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <img src="image/shirt6.png" alt="">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>Pup Blue Jacket</p>
+                        <h3>20% off - Don’t Miss Out!</h3>
+                        <button class = "buynow-btn">Buy Now</button>
+                    </div>
+
+                    <div class="swiper-slide box">
+                        <img src="image/facebook.png" alt="">
+                        
+                        <h2>Do you have your own Design? please message us on facebook.</h2>
+                        <h2>Thankyou!</h2>
+                        <a href="https://www.facebook.com/profile.php?id=61559014738619&sk=photos" target = "_blank" class="buynow-btn">Go to page</a>
+                    </div>
+        
+        </section>
+
+        <!-- FOOTER -->
+        <section class="footer" id = "footer">
+            <div class="box-container">
+            
+                <div class="box">
+                    <h3>quick links</h3>
+                    <a href="#home"><i class="fas fa-arrow-right"></i> home</a>
+                    <a href="#about"><i class="fas fa-arrow-right"></i> about</a>
+                    <a href="#menu"><i class="fas fa-arrow-right"></i> menu</a>
+                    <a href="#Sale"><i class="fas fa-arrow-right"></i> Sale</a>
+                    <a href="#trend"><i class="fas fa-arrow-right"></i> blogs</a>
+                    <a href="signin.html"><i class="fas fa-arrow-right"></i>Sign in</a>
+                    <a href="payment.html"><i class="fas fa-arrow-right"></i>Payment Form</a>
+                    <a href="registration.html"><i class="fas fa-arrow-right"></i>Registration Form</a>
+                </div>
+
+                <div class="box">
+                    <h3>Contact Us</h3>
+                    <a href="#"><i class="fas fa-phone"></i>09557834280</a>
+                    <a href="#"><i class="fas fa-envelope"></i>EjArtsandDesign@gmail.com</a>
+                </div>
+
+                <div class="box">
+                    <h3>contact info</h3>
+                    <a href="https://www.facebook.com/profile.php?id=61559014738619&sk=photos" target="_blank"><i class="fab fa-facebook-f"></i> facebook</a>
+                    <a href="#"><i class="fab fa-twitter"></i> twitter</a>
+                    <a href="#"><i class="fab fa-instagram"></i> instagram</a>
+                  
+                </div>
+
+                <div class="box">
+                    <h3>Get in Touch </h3>
+                    <h4>Ready to bring your ideas to life? Contact us today to discuss your project, request a quote, or place an order. Visit us at our location or reach out to us via phone at <ins>0955-783-4280</ins>. 
+                        We look forward to working with you and helping you create something truly special.</h4>
+                    <h4>At EJ Arts and Prints, your imagination is our canvas. Let us help you make your mark with custom printing solutions that stand out.</h4>
+                  
+                </div>
+            </div>
+
+            
+        </section>
+
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+        <script src="js/script.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/registration.css"/>
+    
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
+    <script src="/js/validation.js" defer></script>
+</head>
+    <body>
+        
+        <div class="container">
+            <div class="wrapper">
+            <h1>Sign up</h1>
+        
+        <form action="process-registration.php" method="post" id="registration" novalidate>
+            <?php if (!empty($validate)): ?>
+            <p class="error-message"><?php echo htmlspecialchars($validate); ?></p>
+            <?php endif; ?>
+
+                <div class = "name">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                </div>
+                
+                <div class = "email">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                </div>
+                
+                <div class = "Password">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                
+                <div class = "Repeatpass">
+                    <label for="password_confirmation">Repeat password:</label>
+                    <input type="password" id="password_confirmation" name="password_confirmation">
+                </div>
+            
+                <div class="button-container">
+                    <button>Sign up</button>
+                </div>
+                
+        </form>
+        </div>
+        </div>
+        </div>
+    </body>
+</html>

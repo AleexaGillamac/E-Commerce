@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+html{
+    font-size: 45.5%;
+}
+
+body{
+    height: 100vh;
+    background: linear-gradient(5deg,#ba9b00,#c9a5a5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 2rem;
+}
+
+.title{
+    color: #393939;
+}
+
+.container{
+    background: white;
+    max-width: 80rem;
+    padding: 3rem 3rem;
+    border-radius: 1rem;
+}
+
+form .title{
+    font-size: 3.5rem;
+}
+form p{
+    font-size: 1.6rem;
+    padding: 1rem 0;
+}
+form p span{
+    color: red;
+}
+
+
+.contact-details{
+    width: 100%;
+    /* display: flex; */
+}
+ h2{
+    font-size: 2.5rem;
+   padding: .5rem 0 2rem 0;
+    color: gray;
+    
+}
+
+.box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.input-box{
+    /* display: flex; */
+    width: calc(100%/2 - 2rem);
+    padding-bottom: 1rem;
+}
+
+.input-box label{
+    display: block;
+    font-size: 1.8rem;
+    padding-bottom: .5rem;
+    font-weight: 500;
+}
+
+.gender-title{
+    font-size: 2rem;
+    color: black;
+    font-weight: 500;
+    
+}
+.size-title{
+    font-size: 2rem;
+    color: black;
+    font-weight: 500;
+}
+
+#address{
+    width: 100%;
+}
+#address input{
+    height: 10rem;
+
+}
+
+
+.category{
+    display: flex;
+    /* width: 80%; */
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.input-box input,select{
+    font-size: 1.7rem;
+    height: 4.5rem;
+    width: 100%;
+    border-radius: .5rem;
+    border: .2rem solid lightgray;
+    outline: none;
+
+}
+ input:focus
+{
+    border: .2rem solid #ffc800;
+    border-bottom-width: .3rem;
+}
+
+.category div{
+    font-size: 2rem;
+    margin: 0 2rem;
+    
+}
+
+
+.submit-btn{
+    text-align: center;
+    margin-top: 2rem;
+}
+.submit-btn button{
+    font-size: 1.8rem;
+    padding: 1rem 4rem;
+    border: none;
+    outline: none;
+    background-color: #393939;
+    font-weight: 500;
+    border-radius: .5rem;
+    color: white;
+}
+.submit-btn button:hover{
+    background: linear-gradient(45deg,#eaed04,#000000);
+
+}
+
+@media(max-height:890px){
+    .container{
+        max-height: 850px;
+        overflow-y: scroll;
+    }
+    .container::-webkit-scrollbar{
+        width: 0;
+    }
+
+}
